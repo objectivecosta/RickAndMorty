@@ -12,6 +12,8 @@ protocol CharacterDetailPresenterProtocol: NSObjectProtocol {
     func viewDidLoad()
     func fetchCharacter(id: Int)
     
+    func dismissView()
+    
     var character: ShowCharacter? { get }
 }
 
@@ -23,8 +25,13 @@ protocol CharacterDetailPresenterView: NSObjectProtocol {
     func renderError(error: Error)
 }
 
+protocol CharacterDetailPresenterDelegate: NSObjectProtocol {
+    func characterDetailPresenterDidRequestDismissal(_ characterDetailPresenter: CharacterDetailPresenterProtocol)
+}
+
 class CharacterDetailPresenter: NSObject, CharacterDetailPresenterProtocol {
     weak var view: CharacterDetailPresenterView?
+    weak var delegate: CharacterDetailPresenterDelegate?
     var service: RickAndMortyService
     var characterId: Int
     
@@ -63,6 +70,10 @@ class CharacterDetailPresenter: NSObject, CharacterDetailPresenterProtocol {
                 }
             }
         }
+    }
+    
+    func dismissView() {
+        self.delegate?.characterDetailPresenterDidRequestDismissal(self)
     }
 
 }

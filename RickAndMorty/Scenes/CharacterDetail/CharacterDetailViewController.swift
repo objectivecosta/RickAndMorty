@@ -50,6 +50,7 @@ class CharacterDetailViewController: UIViewController, CharacterDetailPresenterV
         
         self.imageView?.sd_cancelCurrentImageLoad()
         
+        self.title = character.name
         self.nameLabel?.text = character.name
         self.statusLabel?.text = character.status
         self.typeLabel?.text = character.type
@@ -60,6 +61,7 @@ class CharacterDetailViewController: UIViewController, CharacterDetailPresenterV
     }
     
     func renderError(error: Error) {
+        self.presenter?.dismissView()
         MortyErrorView.show(title: "Oops!", message: error.localizedDescription)
     }
 }

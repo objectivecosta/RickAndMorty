@@ -20,8 +20,12 @@ class CharacterCoordinator: NSObject {
     }
     
     func showDetail(characterId: Int) {
-        let characterDetail = CharacterSceneFactory.makeDetail(characterId: characterId)
+        let characterDetail = CharacterSceneFactory.makeDetail(characterId: characterId, delegate: self)
         self.navigationController.pushViewController(characterDetail, animated: true)
+    }
+    
+    func pop() {
+        self.navigationController.popViewController(animated: true)
     }
 }
 
@@ -29,5 +33,12 @@ extension CharacterCoordinator: CharacterListingPresenterDelegate
 {
     func characterListingPresenter(_ characterListingPresenter: CharacterListingPresenterProtocol, didSelectCharacterWithId id: Int) {
         self.showDetail(characterId: id)
+    }
+}
+
+extension CharacterCoordinator: CharacterDetailPresenterDelegate
+{
+    func characterDetailPresenterDidRequestDismissal(_ characterDetailPresenter: CharacterDetailPresenterProtocol) {
+        self.pop()
     }
 }

@@ -72,7 +72,6 @@ class CharacterListingPresenter: NSObject, CharacterListingPresenterProtocol {
             
                 switch result {
                 case .success(let characters):
-                    NSLog("Did load %i", characters.count)
                     self.characters.append(contentsOf: characters)
                     self.page = page
                     self.view?.didLoadCharacters(count: characters.count)

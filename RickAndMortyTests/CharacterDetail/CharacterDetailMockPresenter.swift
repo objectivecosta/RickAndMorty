@@ -27,4 +27,9 @@ class CharacterDetailMockPresenter: NSObject, CharacterDetailPresenterProtocol {
     func fetchCharacter(id: Int) {
         self.fetchCharacterCalledWith = id
     }
+    
+    var dismissViewCalled: Bool = false
+    func dismissView() {
+        self.dismissViewCalled = true
+    }
 }

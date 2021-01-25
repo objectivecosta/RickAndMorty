@@ -6,6 +6,8 @@
   
 */
 
+"textCharacterListTitle" = "Personagens";
+
 "errorInvalidStatusCodeDescription" = "Código de resposta HTTP inválido";
 "errorInvalidDataDescription" = "Dados inválidos";
 "errorFailedToSerializeDescription" = "Falha ao serializar dados";

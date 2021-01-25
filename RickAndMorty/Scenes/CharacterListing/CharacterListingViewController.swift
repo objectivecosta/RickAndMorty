@@ -18,6 +18,7 @@ class CharacterListingViewController: UIViewController, CharacterListingPresente
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = NSLocalizedString("textCharacterListTitle", comment: "")
         self.setupTableView()
         self.presenter.viewDidLoad()
     }
@@ -31,7 +32,7 @@ class CharacterListingViewController: UIViewController, CharacterListingPresente
     // MARK: - Delegate
     
     func didStartLoading() {
-        self.loadingView = MortyLoadingView()
+        self.loadingView = MortyLoadingView.fromXIB()
         self.loadingView?.show()
     }
     

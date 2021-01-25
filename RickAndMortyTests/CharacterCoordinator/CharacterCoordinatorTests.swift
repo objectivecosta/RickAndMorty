@@ -42,7 +42,7 @@ class CharacterCoordinatorTests: QuickSpec {
             }.to(beAKindOf(CharacterDetailViewController.self))
         }
         
-        it("calls push on delegate call") {
+        it("calls push on listing delegate call") {
             self.coordinator?.characterListingPresenter(CharacterListingMockPresenter(), didSelectCharacterWithId: 2)
             
             let viewController: CharacterDetailViewController? = (self.navigationControllerMock?.lastPushedViewController as? CharacterDetailViewController)
@@ -52,6 +52,31 @@ class CharacterCoordinatorTests: QuickSpec {
                 presenter?.characterId
             }.to(equal(2))
             
+        }
+        
+        it("calls pop on detail delegate call") {
+            self.coordinator?.characterDetailPresenterDidRequestDismissal(CharacterDetailMockPresenter())
+
+            expect {
+                self.navigationControllerMock?.popViewControllerCalledWith
+            }.toNot(beNil())
+            
+            expect {
+                self.navigationControllerMock?.popViewControllerCalledWith
+            }.to(equal(true))
+            
+        }
+        
+        it("calls pop on pop call") {
+            self.coordinator?.pop()
+
+            expect {
+                self.navigationControllerMock?.popViewControllerCalledWith
+            }.toNot(beNil())
+            
+            expect {
+                self.navigationControllerMock?.popViewControllerCalledWith
+            }.to(equal(true))   
         }
     }
 }

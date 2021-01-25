@@ -21,6 +21,8 @@ class CharacterDetailViewControllerTests: QuickSpec {
         super.spec()
         
         beforeEach {
+            MortyErrorView.currentErrorView?.dismiss()
+            
             self.mockService = CharacterDetailMockService()
             self.mockPresenter = CharacterDetailMockPresenter()
             
@@ -92,8 +94,14 @@ class CharacterDetailViewControllerTests: QuickSpec {
             expect {
                 MortyErrorView.currentErrorView
             }.toNot(beNil())
+        }
+        
+        it("calls dismiss when an error occurs") {
+            self.viewController?.renderError(error: RickAndMortyError.invalidData)
             
-            MortyErrorView.currentErrorView?.dismiss()
+            expect {
+                self.mockPresenter?.dismissViewCalled
+            }.to(beTruthy())
         }
     }
 }

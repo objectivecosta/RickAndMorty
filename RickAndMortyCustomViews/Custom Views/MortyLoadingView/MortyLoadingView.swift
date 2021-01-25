@@ -24,23 +24,18 @@ public class MortyLoadingView: UIView {
     
     func show() {
         MortyLoadingView.currentLoadingView?.dismiss()
-        
-        let view = MortyLoadingView.fromXIB()
-        
-        MortyLoadingView.currentLoadingView = view
+        MortyLoadingView.currentLoadingView = self
         
         guard let window = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window else {
             return
         }
         
-        window.addSubview(view)
-        view.center = window.center
-        
-        view.alpha = 0.0
-        window.addSubview(view)
+        window.addSubview(self)
+        self.center = window.center
+        self.alpha = 0.0
         
         UIView.animate(withDuration: 0.35) {
-            view.alpha = 1.0
+            self.alpha = 1.0
         } completion: { (completed) in
             
         }

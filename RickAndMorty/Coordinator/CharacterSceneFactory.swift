@@ -16,10 +16,11 @@ class CharacterSceneFactory {
         return viewController
     }
     
-    static func makeDetail(characterId: Int) -> UIViewController {
+    static func makeDetail(characterId: Int, delegate: CharacterDetailPresenterDelegate? = nil) -> UIViewController {
         let viewController = CharacterDetailViewController()
         let presenter = CharacterDetailPresenter(withView: viewController, service: RemoteService(), characterId: characterId)
         viewController.presenter = presenter
+        presenter.delegate = delegate
         return viewController
     }
 }
