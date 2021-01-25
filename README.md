@@ -8,3 +8,5 @@
 local object caching is possible to avoid a second request in the details page. Adding a "local service" to complement the remote service (which accesses the API) would be possible.
 
 - Add more testing to the Loading/Error views
+
+- Change TableView cells to be prettier.
