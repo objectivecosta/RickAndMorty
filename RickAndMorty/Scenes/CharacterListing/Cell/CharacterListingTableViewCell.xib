@@ -39,6 +39,11 @@
                             <constraint firstAttribute="height" priority="999" constant="88" id="Dl1-kO-QhH"/>
                             <constraint firstAttribute="width" secondItem="n3M-rQ-K8g" secondAttribute="height" multiplier="1:1" id="gXv-ib-hUo"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                 </subviews>
                 <constraints>

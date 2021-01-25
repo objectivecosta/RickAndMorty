@@ -24,7 +24,18 @@ class CharacterDetailViewController: UIViewController, CharacterDetailPresenterV
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.reset()
         self.presenter.viewDidLoad()
+    }
+    
+    private func reset() {
+        self.title = nil
+        self.nameLabel?.text = nil
+        self.statusLabel?.text = nil
+        self.typeLabel?.text = nil
+        self.speciesLabel?.text = nil
+        self.genderLabel?.text = nil
+        self.episodeCountLabel?.text = nil
     }
 
     // MARK: - Delegate
