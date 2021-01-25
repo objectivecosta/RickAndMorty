@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  RickAndMorty
+
+  Created by Rafael Costa on 22/01/21.
+  
+*/
+
+"errorInvalidStatusCodeDescription" = "Código de resposta HTTP inválido";
+"errorInvalidDataDescription" = "Dados inválidos";
+"errorFailedToSerializeDescription" = "Falha ao serializar dados";
+"errorUnknownDescription" = "Erro desconhecido encontrado";

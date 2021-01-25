@@ -1,0 +1,30 @@
+PODS:
+  - lottie-ios (3.1.9)
+  - Nimble (9.0.0)
+  - Quick (3.0.0)
+  - SDWebImage (5.10.3):
+    - SDWebImage/Core (= 5.10.3)
+  - SDWebImage/Core (5.10.3)
+
+DEPENDENCIES:
+  - lottie-ios
+  - Nimble
+  - Quick
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - lottie-ios
+    - Nimble
+    - Quick
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  SDWebImage: e378178472b735e84b007bfb55514c97948a0598
+
+PODFILE CHECKSUM: e3e0888136e2cbd567d8f62d97b15d8ab23e82fe
+
+COCOAPODS: 1.10.0
